@@ -1,0 +1,17 @@
+{
+    "Train_csv":"native_dataset/COFW/annotations/face_landmarks_cofw_train_with_box.csv",
+    "Test_csv":"native_dataset/COFW/annotations/face_landmarks_cofw_test_with_box.csv",
+    "csv_add_path":"native_dataset/COFW/images",
+    "NUM_JOINTS":29,
+    "DATA_TYPE":"COFW",
+    "BEGIN_EPOCH":0,
+    "END_EPOCH":400,
+    "LR_STEP":[10,30,50,70,100,150],
+    "ROT_FACTOR":40,
+    "TRANSLATION_FACTOR":0.05,
+    "SCALE":1.12,
+    "SCALE_FACTOR":0.08,
+    "IMAGE_SIZE":256,
+    "RANDOM_SEED":0.5,
+    "FLIP_INDEX":[1,0,3,2,6,7,4,5,9,8,11,10,14,15,12,13,17,16,19,18,20,21,23,22,24,25,26,27,28]
+}

@@ -1,0 +1,17 @@
+{
+    "Train_csv":"native_dataset/AFLW/annotations/face_landmarks_aflw_train_with_box.csv",
+    "Test_csv":"native_dataset/AFLW/annotations/face_landmarks_aflw_test_with_box.csv",
+    "csv_add_path":"native_dataset/AFLW/images",
+    "NUM_JOINTS":19,
+    "DATA_TYPE":"AFLW",
+    "BEGIN_EPOCH":0,
+    "END_EPOCH":400,
+    "LR_STEP":[10,30,50,70,100,150],
+    "ROT_FACTOR":40,
+    "TRANSLATION_FACTOR":0.05,
+    "SCALE":1.12,
+    "SCALE_FACTOR":0.08,
+    "IMAGE_SIZE":256,
+    "RANDOM_SEED":0.5,
+    "FLIP_INDEX":[5,4,3,2,1,0,11,10,9,8,7,6,14,13,12,17,16,15,18]
+}
