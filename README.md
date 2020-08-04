@@ -10,6 +10,8 @@ This programe contains 3 networks:
 2. OCN_0.5 & OCN_0.25
 3. OCNMP
 
+![OCN structure](resize_configuration_direct.jpg)
+
 If you are interested in achieve higher accuracy, you can change the backbone depth or other tricks. OCNMP is the same structure as OCN at inference, you can clip other auxiliary branches to transfer other framework.
 
 All experiments are conducted on per RTX 1080ti.
