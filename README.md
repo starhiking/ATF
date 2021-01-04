@@ -141,7 +141,7 @@ python tools/train_multi.py
 ````bash
 python tools/test_filelist_MDT.py 
 --model_type=MULTI_FLAN2
---resume_checkpoints=checkpoint/Mix/WFLW/MDT_WA71/best.pth
+--resume_checkpoints=checkpoint/Mix/WFLW/MDT_WA71/29_checkpoint.pth
 --main_data=WFLW
 --gpus=0
 --batch_size=2
@@ -149,4 +149,4 @@ python tools/test_filelist_MDT.py
 --aux_datas=AFLW
 ````
 
-
+If you wanna to use the model to evaluate directly, you can download from [baidu_os](https://pan.baidu.com/s/1beCxxGAUU8O12LbxtAOvjg) key: `7rqo`.After that, you can run the above script with changed `resume_checkpoints`
