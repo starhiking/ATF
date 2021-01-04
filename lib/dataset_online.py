@@ -212,7 +212,7 @@ class SelfDatasetsOnline(data.Dataset):
         
         if y2 > img.shape[0] -1 :
             board_flag = True
-            board_size[1] = math.ceil(y2 - (img.shape[0] -1))  # bottom
+            board_size[1] = math.ceil(y2 - (img.shape[0] -1))  #bottom
 
         if board_flag:
             new_img = np.zeros((img.shape[0]+np.sum(board_size[0:2]),img.shape[1]+np.sum(board_size[2:4]),3))

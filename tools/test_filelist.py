@@ -17,7 +17,6 @@ from models.pfld_avg import PFLD_AVG
 from models.pfld_half import PFLD_HALF
 from models.multi_flan import MULTI_FLAN
 from models.multi_flan2 import MULTI_FLAN2
-from models.multi_flan3 import MULTI_FLAN3
 
 from losses.wing_loss import WingLoss
 from losses.adaptive_wing_loss import AdaptiveWingLoss
@@ -58,7 +57,7 @@ test_files["COFW"] = [
 def parse_args():
     parser = argparse.ArgumentParser(description='Training infos')
     
-    parser.add_argument('--model_type',type=str,default="MULTI_FLAN")
+    parser.add_argument('--model_type',type=str,default="MULTI_FLAN2")
     parser.add_argument('--resume_checkpoints',type=str,default="checkpoint/300W/PFLD_AVG_base_COFW_1e-2/best.pth")
     parser.add_argument('--data_type',type=str,default="300W")
     parser.add_argument('--aux_datas',type=str,default="COFW")
@@ -111,28 +110,6 @@ def get_model(cfg):
         model = PFLD_AVG(cfg["NUM_JOINTS"]*2)
     elif args.model_type in ["PFLD_HALF","pfld_half"]:
         model = PFLD_HALF(cfg["NUM_JOINTS"]*2)
-    elif args.model_type in["GHOST","ghost","GhostNet"]:
-        model = GhostNet(cfg["NUM_JOINTS"]*2)
-    elif args.model_type in ["HRNET","hrnet"]:
-        if args.heatmap_sigma:
-            model = get_face_alignment_net(cfg["NUM_JOINTS"],pretrained=args.pretrained)
-        else:
-            raise("HRNET must set heatmap sigma")
-    elif args.model_type in ["multi_flan","MULTI_FLAN"]:
-        landmark_nums = [cfg["NUM_JOINTS"]*2]
-        for key in cfg.keys():
-            landmark_nums.append(cfg[key]["NUM_JOINTS"]*2)
-        models = MULTI_FLAN(landmark_nums) #models[0] is main_
-    elif args.model_type in ["multi_flan2","MULTI_FLAN2"]:
-        landmark_nums = [cfg["NUM_JOINTS"]*2]
-        for key in cfg.keys():
-            landmark_nums.append(cfg[key]["NUM_JOINTS"]*2)
-        models = MULTI_FLAN2(landmark_nums) #models[0] is main_
-    elif args.model_type in ["multi_flan3","MULTI_FLAN3"]:
-        landmark_nums = [cfg["NUM_JOINTS"]*2]
-        for key in cfg.keys():
-            landmark_nums.append(cfg[key]["NUM_JOINTS"]*2)
-        models = MULTI_FLAN3(landmark_nums) #models[0] is main_
     else:
         raise("Not support {} mode now.".format(args.model_type))
     return model

@@ -139,13 +139,14 @@ python tools/train_multi.py
 #### Test
 
 ````bash
-python tools/test_filelist.py 
+python tools/test_filelist_MDT.py 
 --model_type=MULTI_FLAN2
---resume_checkpoints=`mix/checkpoints/wflw/ATF_W331/best.pth`
+--resume_checkpoints=checkpoint/Mix/WFLW/MDT_WA71/best.pth
 --main_data=WFLW
 --gpus=0
---batch_size=64
---workers=8
+--batch_size=2
+--show_others
+--aux_datas=AFLW
 ````
 
 
