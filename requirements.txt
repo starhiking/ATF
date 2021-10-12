@@ -12,7 +12,7 @@ npyscreen==4.10.5
 numpy==1.17.3
 nvidia-ml-py3==7.352.0
 olefile==0.46
-opencv-python==4.1.2.30
+opencv-python==4.2.0.32
 pandas==0.25.3
 Pillow==7.1.0
 protobuf==3.11.2
